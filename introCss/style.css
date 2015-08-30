@@ -1,0 +1,163 @@
+/*Profesor Daniel Martinez Wakkos*/
+
+/*
+Selector universal
+	afecta a todos los elementos de la web
+*/
+*{
+	/*color: red;*/
+}
+
+/*
+Selector de elemento
+	Son todos los nombres de las etiquetas
+*/
+
+/*
+h1, .h1
+	con esta nomenclatura se aplican las mismas normas 
+	tanto al selector de elemento [h1] como al selector 
+	de clase [.h1]
+
+*/
+h1, .h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: maroon;
+	font-size: 24px;
+}
+
+/*
+	La cascada
+	Fallback: Respaldo
+	el ultimo elemento es el que se lee 
+	ej:
+		font-size: 16px;
+		font-size: 1rem; 	rem: rootEM = la unidad de medida de la raiz del HTML	
+	en este caso la cascada funciona de la siguiente manera
+	si no sirve la propiedad [font-size: 1rem] en algun 
+	browser quien se ejecuta es [font-size: 16px]
+
+*/
+
+h2, .h2{
+	font-family: Arial, Helvetica, sans-serif;
+	color: green;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+/*
+Selector de ID
+	Se define por el simbolo de # y el nombre del id
+	el 90% de uso que se le da a los selectores de ID 
+	es con javascript por lo que se utiliza el prefijo
+	js-nombreId
+*/
+#js-topbar{
+	/*background-color: pink;*/
+}
+
+
+/*
+Selector de clase
+	se comiensa con un punto y el nombre de la clase
+	DRY: Don't repeat yourself
+*/
+/*.article-header{
+	font-family: Arial, Helvetica, sans-serif;
+	color: green;	
+}*/
+
+/*
+	.article__header h1 a
+	Esta nomenclatura se da cuando se quiere dar un formato 
+	en especifico a un link [a] dentro de un h1 que esta dentro 
+	de una clase  .article__header. No es muy recomendable
+	puesto que se limita a la clase a repetirla en otro
+	lado.
+*/
+
+/*Esto es un modulo en CSS*/
+.article{
+
+}
+	.article__header{
+		font-family: Arial, Helvetica, sans-serif;
+		color: green;	
+	}
+	.article__footer{
+
+	}
+	/*
+		modificador
+		se pone el nombre de la clase seguido de dos guiones
+		ej: article--nombreModificador
+		Esto biene de la nomenclatura BEM
+		BEM: Block, Element, Modifier
+	*/
+	.article--bgblue{
+		background-color: blue;
+	}
+
+.background-pink{
+	background-color: pink;	
+}
+
+/*
+	Selectores de atributo
+	son los selectores que me premiten trabajar con los 
+	diferentes atributos del selector
+	ej:
+		input:checked
+		input:focus
+
+	buscar listado de los atributos de cada elemento en la web. 
+	buscar todas las propiedades de los formularios
+	buscar los 30 selectores que deverias utilizar
+	buscar validaciones para formularios con CSS
+	http://codepen.io/Wakkos/pen/xAhdq
+	http://codepen.io/Wakkos/
+	CSSguideland - guia de CSS buscar
+
+*/
+li[data-RobotOwner="Koji Kabuto"]{
+	background-color: olive;
+	color:white;
+}
+
+li[data-RobotOwner="Sayaka Yumi"]{
+	background-color: brown;
+	color:white;
+}
+
+input[type="email"]:valid {
+	background-color: peru;
+}
+
+input[type="email"]:focus:invalid {
+	background-color: red;
+}
+
+/*
+	~ selecciona todos los siguientes elementos 
+	  despues de la clase.
+	+ Selecciona el primer siguiente selector 
+	  hermano de la clase.
+*/
+
+.toggle:checked ~ .checked{
+	background-color: olive;
+}
+
+.checked{
+	width: 100px;
+	height: 100px;
+	background-color: peru;
+}
+
+/*
+	herramientas
+		codepen
+		emmet
+		codekid server privado
+*/
