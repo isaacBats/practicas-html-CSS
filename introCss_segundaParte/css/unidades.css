@@ -1,0 +1,96 @@
+/*
+Unidades de medida.
+	em: el font size del contenedor
+	rem: Root EM el tamaño se basa en la raiz del documento
+		que es el html.
+	vw: Viewport width
+	vh: Viewport height
+
+*/
+
+html{
+	font-size: 100%;
+	/*font-size: 80%;*/
+}
+
+.h1-em h1{
+	font-size: 32px;
+}
+
+	.h1-em a{
+		font-size: .5em;
+	}
+
+/*h1{
+	font-size: 32px;
+}*/
+
+	.h1-em span{
+		font-size: .5em;
+	}
+
+.h1-rem h1{
+	font-size: 2.5rem;
+}
+	.h1-rem a{
+		font-size: 1rem;
+	}
+
+	.h1-rem span{
+		font-size: 1rem;
+	}
+
+.linkTitulo h1{
+	font-size: 1.5rem;	
+}
+	.linkTitulo h1 a{
+		font-size: .8em;
+	}
+
+.square{
+	/*width: 100px;
+	height: 100px;*/
+	width: 1em;
+	height: 1em;
+	background-color: peru;
+	font-size: 50px;
+}
+
+	.square::after{
+		content: "";
+		/*width: 50px;
+		height: 50px;*/
+		width: .5em;
+		height: .5em;
+		background-color: red;
+		position: absolute;
+		/*top:25px;
+		left: 25px;*/
+		top:.25em;
+		left:.25em;
+	}
+
+.container{
+	width: 80%;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0; 	
+	background-color: peru;
+	/*height: 100vh;*/
+	/*height: 50vh;*/
+	height: 50vw;
+	/*width: 25vw;*/
+	width: 100vw;
+}
+	li{
+		background-color: olive;
+		height: 20vh;
+		border-bottom: maroon 1px solid;
+	}
+
+/*
+	https://ia.net/know-how/responsive-typography-the-basics
+*/
