@@ -1,0 +1,126 @@
+
+	float:
+		el float no se puede centrar solo es left
+		y right.
+		No es tan sensillo utilizarlo
+
+	table:
+		Nos ayuda a tratar el html como tablas
+			display:table;
+				display:table-cell;
+				display:table-row;
+				display:table-caption;
+
+	flexbox:
+		modulo flexible de modelado de caja
+			display:flex;
+			--con sus diferentes prefijos para navegadores
+			display:-webkit-box;
+			display:-webkit-flex;
+			display:-moz-flex;
+			display:-ms-flexbox;
+*/
+html{
+	margin: 0;
+	padding: 0;
+}
+
+/*Propiedades en el eje orizontal*/
+.container{
+	border: solid;
+	/*width: 700px;*/
+	height: 300px;
+	display: flex;
+	/*justify-content:flex-start;*/ /*default*/
+	/*justify-content:flex-end;*/
+	/*justify-content:center;*/
+	/*justify-content:space-between;*/
+	justify-content:space-around;
+	flex-wrap: wrap;  /*-- para ajustar las imagenes en cuanto decresca el contenedor*/
+}
+
+.item{
+	height: 120px;
+	padding-top: 1rem;
+	width: 200px;
+}
+
+.container2{
+	align-items: flex-start;
+	border: solid;
+	/*display: flex;*/
+	justify-content:center;
+	margin-top: 1.5rem;
+	width: 220px;
+
+}
+
+.item2{
+	height: 180px;
+	width: 180px;
+}
+
+.container3{
+	/*align-items:flex-start;*/
+	/*align-items:flex-end;*/
+	/*align-items:center;*/
+	align-items:stretch;
+	/*border: solid;*/
+	display: flex;
+	/*justify-content:flex-start;*/
+	justify-content:space-around;
+	margin-top: 12px;
+
+}
+	.libro{
+		order: 1;
+		flex-grow: 2;
+	}
+
+	.cocina{
+		order: -1;
+		align-self: flex-end;
+	}
+
+	.azul{
+
+	}
+
+/* ejemplo de flex-basis */
+
+.form{
+	display: flex;
+}
+	input[type=text]{
+		width: 100%;
+	}
+	input[type=submit]{
+		flex-basis:100px;
+	}
+
+
+/*
+	Propiedades de hijos
+	.item{ width:200px; }
+		eg
+		.container{
+			display:flex;
+		}
+			.item{
+				width: 200px;
+				order: 0;      --Con esta instruccion puedes mover el item a una posicion en especifico
+				flex-grow: 0;
+				flex-shrink: 0;
+				align-self: auto;
+				flex-basis: auto;
+			}
+
+
+*/
+
+/*
+	Paginas de consulta:
+		caniuse.com
+		sass-flex-mixin/flexbox.css en github
+		solved by flexbox   buscar en google.
+		http://www.smoresday.us/
