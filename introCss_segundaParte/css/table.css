@@ -1,0 +1,23 @@
+main{
+	display: table;
+	/*caption-side: bottom;*/
+	caption-side: top;
+}
+
+	header{
+		display: table-caption;
+		/*display: table-cell*/;
+	}
+
+	section{
+		display: table-cell;
+		background-color: maroon;
+		width: 80%;
+	}
+
+	aside{
+		/*display: table-cell;*/
+		display: table-row;
+		background-color: peru;
+		width: 20%;
+	}
