@@ -1,0 +1,53 @@
+/*
+PseudoElementos
+	Pseudo Elementos 
+	Pseudo Clases
+*/
+
+/*PseudoElementos*/
+span{
+	font-size: 1rem;
+	position: relative;
+}
+	span::after{
+		content: ">";
+	}
+	span::before{
+		content: "+ ";
+		position: absolute;
+		top: -10px;
+		right: -20px;
+	}
+
+.container{
+	width: 80%;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+	display: inline-block;
+	text-align: center;
+}
+
+	li:first-child{
+		background-color: red;	
+		width: 100%
+	}
+
+	li:last-child{
+		background-color: purple;
+		width: 100%;
+	}
+
+	li:nth-child(2){
+		background-color: peru;
+	}
+
+/*
+Herramientas:
+	Css.tricks: css-tricks.com/examples/;
+*/
