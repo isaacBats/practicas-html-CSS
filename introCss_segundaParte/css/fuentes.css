@@ -1,0 +1,36 @@
+/*
+progressive Enhancement
+	awesome css		awesome js
+	cool css		cool js
+	css				css
+			html
+fuentes
+*/
+
+html{
+	/*font-family: sans-serif;*/
+	/*font-family: arial;*/
+	/*font-family: 'Comic Sans', arial;*/
+	/*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;*/
+	font-family: 'Ovo', sans-serif;
+
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main-header{
+	text-align: center;
+	background-color: #16210B;
+	color: white;
+	padding: 4em;
+}
+
+/*
+herramientas:
+	css font stack
+	google fonts
+	fontsquirrel: http://www.fontsquirrel.com/
+*/
