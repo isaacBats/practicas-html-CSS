@@ -13,7 +13,21 @@ html{
 	/*font-family: 'Comic Sans', arial;*/
 	/*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;*/
 	font-family: 'Ovo', sans-serif;
+	/*font-size: 110%;*/
+	font-size: 80%;
 
+}
+
+/*
+@media screen  --pantallas
+@media print  --cuando imprima
+*/
+/*@media all and (min-width: 400px){*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	html{
+		/*font-size: 80%;*/
+		font-size: 120%;
+	}
 }
 
 body{
@@ -27,10 +41,35 @@ body{
 	color: white;
 	padding: 4em;
 }
+	.main-header h1{
+		margin: 0;
+	}
+	.main-header h2{
+		font-size: 1rem;
+		font-weight: normal;
+	}
+
+	/*@media all and (max-width: 400px){*/
+	@media all and (orientation: landscape){
+		.main-header{
+			background-color: olive;
+		}
+	}
+
+.card{
+	height: 30vh;
+	width: 100%;
+	background-image: url(../image/valencia.jpg);
+	background-size: cover;
+}
 
 /*
 herramientas:
 	css font stack
 	google fonts
 	fontsquirrel: http://www.fontsquirrel.com/
+	em proporcional media querys for de win: http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/
+	https://developer.mozilla.org/es/docs/CSS/Media_queries
+	http://coolvillage.es/propiedades-de-los-mediaqueries/
+
 */
