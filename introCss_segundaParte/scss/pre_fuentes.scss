@@ -1,0 +1,147 @@
+/*
+	Pre-procesadores
+		SASS
+*/
+@import "flexbox.scss";
+@mixin box-sizing{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;	
+}
+
+$gutter: .4em;
+
+html{
+	font-family: 'Ovo', sans-serif;
+	font-size: 80%;
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	html{
+		font-size: 120%;
+	}
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.main-header{
+	text-align: center;
+	background-color: #16210B;
+	color: white;
+	padding: $gutter;
+}
+	.main-header h1{
+		margin: 0;
+	}
+	.main-header h2{
+		font-size: 1rem;
+		font-weight: normal;
+	}
+
+	@media all and (orientation: landscape){
+		.main-header{
+			background-color: olive;
+		}
+	}
+
+.card{
+	position: relative;
+	height: 30vh;
+	width: 100%;
+	background-size: cover;
+	color: white;
+	padding: $gutter;
+	font-family: 'Megrim', cursive; 
+	@include box-sizing;
+	@include flexbox;
+	@include justify-content(space-around);
+}
+	
+	.card--valencia{
+		background-image: url(../image/valencia-small.jpg); 
+	}
+
+	.card[data-city="mv"]{
+		background-image: url(../image/mv.jpg); 
+	}
+
+	.card__title{
+		margin: 0;
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	.card__date{
+		font-size: .7rem;
+		margin: 0;
+		text-align: center;
+	}
+
+	@media all and (min-width: 28em){
+		.card{
+			background-position: center;
+		}
+
+		.card--valencia{
+			background-image: url(../image/valencia.jpg); 
+		}
+
+		.card--mv{
+			background-image: url(../image/mv.jpg); 
+		}
+	}
+
+	.card__info{
+		position: absolute;
+		bottom: $gutter;
+		left: $gutter;
+		text-align: center;
+	}
+
+	.card__image{
+		display: block;
+	}
+
+	.card__temp{
+		display: block;
+		font-size: 3rem;
+		line-height: 1;
+	}
+
+	.card__maxt::before{
+		content: "Max: "
+	}
+
+	.card__mint::before{
+		content: "Min: "
+	}
+
+/*
+herramientas:
+	para compilar los archivos scss en la terminal
+	se utiliza el siguiente comando:
+
+		sass --watch pre_fuentes.scss:../css/pre_fuentes.css
+
+	Este comando al momento de guardar el archivo .scss se actualiza
+	el archivo css. Si ahí algun error la terminal te lo marca ademas
+	de que tambien lo marca en el archivo .css y en la pag que estas
+	haciendo.
+
+	El siguiente comando es para realizar el archivo .css comprimido
+	es decir sin espacios para restar tamaño al archivo .css.
+
+		sass --watch --style compressed pre_fuentes.scss:../css/pre_fuentes.css
+
+pag:
+github de flexbox.scss mixing: https://github.com/mastastealth/sass-flex-mixin
+http://html5facil.com/tutoriales/sass-para-aplicar-en-proyectos-css-y-html5/
+http://html5facil.com/tutoriales/guia-basica-de-sass/
+http://www.nosolocss.com/blog/sass/sass-para-principiantes-instalacion-y-primeros-pasos-usando-scout
+
+*/
