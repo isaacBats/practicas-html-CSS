@@ -12,7 +12,9 @@
 	var $loader = $(".loader");
 	var nombreNuevaCiudad = $("[data-input='cityAdd']");
 	var buttonAdd = $ ("[data-button='add']");
+	var buttonLoad = $("[data-saved-cities]");
   	
+  	var cities = [];
   	var cityWeather = {};
   	cityWeather.zone;
   	cityWeather.icon;
@@ -26,9 +28,11 @@
   	$(nombreNuevaCiudad).on("keypress", function(event){
   		//console.log(event.which);  // Para ver el codigo de la tecla que se presiona
   		if (event.which == 13) {
-  			addNewCity();
+  			addNewCity(event);
   		}
   	});
+
+  	$(buttonLoad).on("click", loadSavedCities);
 
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(getCoords, errorFound);
@@ -100,6 +104,8 @@
 	function getWeatherNewCity(data){
 		//console.log(data);
 		$.getJSON(API_WORLDTIME + $(nombreNuevaCiudad).val(), function(response){
+			$(nombreNuevaCiudad).val("");
+
 			cityWeather = {};
 			cityWeather.zone = data.name;
 		  	cityWeather.icon = IMG_WEATHER + data.weather[0].icon + ".png";
@@ -110,7 +116,31 @@
 
 		  	//console-log(response);
 		  	renderTemplate(cityWeather, response.data.time_zone[0].localtime);	
+
+		  	cities.push(cityWeather);
+		  	localStorage.setItem("cities", JSON.stringify(cities));
 		});		
 	}
+
+	//function loadSavedCities(event){
+		//event.preventDefault();
+
+		//function renderCities(cities){
+		//	cities.forEach(function(city){
+		//		renderTemplate(city);
+		//	});
+		//};
+
+		//var cities = JSON.parse(localStorage.getItem("cities"));
+		//renderCities(cities);
+	//}
+	function loadSavedCities(event) {
+    event.preventDefault();
+
+    var cities = JSON.parse( localStorage.getItem("cities") );
+    cities.forEach(function(city) {
+      renderTemplate(city);
+    });
+  }
 
 })();
